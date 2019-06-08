@@ -1,4 +1,8 @@
-Features I've Added - These may not suit you but suit me just fine.
+This has been thrown together in a hurry, it's badly chopped up and hardly commented.
+
+## Features I've Added 
+
+These may not suit you but suit me just fine.
 
 
 
