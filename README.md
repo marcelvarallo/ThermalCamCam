@@ -1,4 +1,14 @@
-This example is meant for Raspberry Pi and Pi2 and has been tested with Raspbian.
+Features I've Added - These may not suit you but suit me just fine.
+
+*Opens the video at a resolution that suits a 320x240 display with space for some touchbuttons
+*LockRange Button - locks the upper and lower values preventing it from autocalibrating the color
+*Color button - swaps between different color modes
+*Freeze button - freezes the image currently displayed.  press again to unfreeze
+*Webcam - Forces the application to exit.  On my setup I have a webcam package set to run the moment this application closes which then hosts the Thermal
+
+
+
+This example is meant for Raspberry Pi, Pi2, and Pi3 and has been tested with Raspbian.
 
 Enable the SPI and I2C interfaces on the Pi.
 
