@@ -1,10 +1,17 @@
 Features I've Added - These may not suit you but suit me just fine.
 
+
+
 *Opens the video at a resolution that suits a 320x240 display with space for some touchbuttons
+
 *LockRange Button - locks the upper and lower values preventing it from autocalibrating the color
+
 *Color button - swaps between different color modes
+
 *Freeze button - freezes the image currently displayed.  press again to unfreeze
+
 *Webcam - Forces the application to exit.  On my setup I have a webcam package set to run the moment this application closes which then hosts the Thermal
+
 
 
 
