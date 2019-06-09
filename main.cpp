@@ -12,7 +12,7 @@
 #include "LeptonThread.h"
 #include "OutlineLabel.h"
 #include "MyLabel.h"
-int snapshotCount = 0;
+//int snapshotCount = 0;
 int rawMin;
 int rawMax;
 
@@ -39,6 +39,9 @@ int main( int argc, char **argv )
 	MyLabel myLabel(myWidget);
 	myLabel.setGeometry(10, 10, 400, 300);
 	myLabel.setPixmap(QPixmap::fromImage(myImage));
+
+	QPushButton *button6 = new QPushButton("SnapShot", myWidget);
+	button6->setGeometry(410, 32, 80, 50);
 	
 	QPushButton *button5 = new QPushButton("WebCam", myWidget);
 	button5->setGeometry(410, 80, 80, 50);
@@ -61,6 +64,7 @@ int main( int argc, char **argv )
 	QObject::connect(thread, SIGNAL(updateRadiometry(QString)), radData, SLOT(setText(QString)));
 
 	//connect ffc button to the thread's ffc action
+	QObject::connect(button6, SIGNAL(clicked()), thread, SLOT(savePic()));
 	QObject::connect(button1, SIGNAL(clicked()), thread, SLOT(performFFC()));
 	QObject::connect(button4, SIGNAL(clicked()), thread, SLOT(rebootMe()));
 	QObject::connect(button5, SIGNAL(clicked()), thread, SLOT(webcam()));

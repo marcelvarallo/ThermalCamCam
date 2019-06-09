@@ -14,6 +14,9 @@
 #define HEIGHT 60
 
 #define HAND_TEMP_THRESHOLD 8050
+
+int snapshotCount = 0;
+
 int lock = 0;
 int threaded = 0;
 int readyToToggle = 1;
@@ -24,7 +27,7 @@ LeptonThread::LeptonThread() : QThread()
 
 LeptonThread::~LeptonThread() {
 }
-
+//QImage myImage = QImage(WIDTH*2, HEIGHT*2, QImage::Format_RGB888);
 void LeptonThread::run()
 {
 	//create the initial image
@@ -148,6 +151,9 @@ while(threaded==0 || threaded ==1) {
 			else {
 				value = (frameBuffer[i] - oldMin) * scale;
 			}
+
+
+
 			const int *colormap = colSet;
 			color = qRgb(colormap[3*value], colormap[3*value+1], colormap[3*value+2]);
 			column = (i % PACKET_SIZE_UINT16 ) - 2;
@@ -206,3 +212,14 @@ void LeptonThread::rebootMe() {
 
 
 }
+void LeptonThread::savePic() {
+	    ++snapshotCount;
+// QString imagePath(QStringLiteral("image.jpeg"));
+        
+//	     {
+//	 QImageWriter writer(imagePath);
+ //        writer.write(myImage);	 
+	// }
+    // JPG image, top quality
+	                                 myImage.save(QString("./images/Thermal%1.jpg").arg(snapshotCount), "JPG", 100);
+		                                 }

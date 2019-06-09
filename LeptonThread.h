@@ -30,6 +30,7 @@ public slots:
   void colorChange();
   void rebootMe();
   void webcam();
+  void savePic();
 
 signals:
   void updateText(QString);
